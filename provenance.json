@@ -2,7 +2,7 @@
   "model": "omnixtreme",
   "display_name": "OmniXtreme",
   "submitter": "MotionChallenge",
-  "submission_type": "maintainer reproduction, not author submission",
+  "submission_type": "MotionChallenge reproduction",
   "upstream": "https://github.com/Perkins729/OmniXtreme",
   "project_url": "https://extreme-humanoid.github.io/",
   "source_commit": "6f2716d1b1d1132d513d86beb2193f5b18f11fcd",
