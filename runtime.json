@@ -1,6 +1,6 @@
 {
   "id": "omnixtreme",
-  "entrypoint": "adapter:create",
+  "entrypoint": "restricted:create",
   "control_period_s": 0.02,
   "reference_offsets_s": [
     0.0,
@@ -8,7 +8,7 @@
   ],
   "reference_history_s": 0.0,
   "reference_preview_s": 0.02,
-  "state_access": "privileged-state-v0",
+  "state_access": "ideal-proprioceptive-no-position-v1",
   "action_mode": "joint-pd-feedforward",
   "inference_config": "policy.json",
   "inference_config_sha256": "ac2c390c351ca3de88e637fe794cfa25281284b34a2eae748235620768396ed5",
@@ -30,12 +30,8 @@
     }
   },
   "official": false,
-  "default_track": "ideal-proprioception",
-  "observation_tracks": {
-    "ideal-proprioception": {
-      "entrypoint": "restricted:create",
-      "admission_record": "admission.json",
-      "admission_sha256": "67b8eb6ae42923a6698187ded2ee390f94c6baad7e896f03e92761a1bb3ef59b"
-    }
+  "observation_contract": {
+    "admission_record": "admission.json",
+    "admission_sha256": "67b8eb6ae42923a6698187ded2ee390f94c6baad7e896f03e92761a1bb3ef59b"
   }
 }
