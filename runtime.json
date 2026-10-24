@@ -1,0 +1,33 @@
+{
+  "id": "omnixtreme",
+  "entrypoint": "adapter:create",
+  "control_period_s": 0.02,
+  "reference_offsets_s": [
+    0.0,
+    0.02
+  ],
+  "reference_history_s": 0.0,
+  "reference_preview_s": 0.02,
+  "state_access": "privileged-state-v0",
+  "action_mode": "joint-pd-feedforward",
+  "inference_config": "policy.json",
+  "inference_config_sha256": "ac2c390c351ca3de88e637fe794cfa25281284b34a2eae748235620768396ed5",
+  "weights": "checkpoints/base_policy_trt.onnx",
+  "weights_sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2",
+  "weights_url": "https://raw.githubusercontent.com/Perkins729/OmniXtreme/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy/base_policy_trt.onnx",
+  "source_repository": "https://github.com/Perkins729/OmniXtreme",
+  "source_commit": "6f2716d1b1d1132d513d86beb2193f5b18f11fcd",
+  "artifacts": {
+    "fk": {
+      "path": "checkpoints/fk_trt.onnx",
+      "url": "https://raw.githubusercontent.com/Perkins729/OmniXtreme/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy/fk_trt.onnx",
+      "sha256": "16c1c04d431a15964db422180039c2d0fb688eeb246d0bdbc041de9a25d756ef"
+    },
+    "residual": {
+      "path": "checkpoints/residual_policy.onnx",
+      "url": "https://raw.githubusercontent.com/Perkins729/OmniXtreme/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy/residual_policy.onnx",
+      "sha256": "6174205a430b84ec51d3f15e014907504a9ad0c38575535a509bc771ebbc1d85"
+    }
+  },
+  "official": false
+}

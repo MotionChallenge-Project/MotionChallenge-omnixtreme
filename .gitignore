@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+checkpoints/
+*.onnx
+*.pt
+*.pth
+*.safetensors
+data/
+results/
+runs/
+.env
+.DS_Store
+:memory:.ses

@@ -1,0 +1,55 @@
+{
+  "model": "omnixtreme",
+  "display_name": "OmniXtreme",
+  "submitter": "Motion Challenge",
+  "submission_type": "maintainer reproduction, not author submission",
+  "upstream": "https://github.com/Perkins729/OmniXtreme",
+  "project_url": "https://extreme-humanoid.github.io/",
+  "source_commit": "6f2716d1b1d1132d513d86beb2193f5b18f11fcd",
+  "checkpoint_sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2",
+  "author_inference_review": "Passed 160 states, 4 resets, 24 endpoint clamps and shuffled joint order; all observed inputs, outputs and motor targets exactly equal to original inference under the same sampled initial_noise and nominal sensor state. 126 cases exercised native target limits.",
+  "inference_validation": "validation/native-parity.json",
+  "checkpoint_origin": {
+    "author_release_url": "https://github.com/Perkins729/OmniXtreme/blob/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/README.md",
+    "author_release_label": "OmniXtreme authors",
+    "kind": "author_file",
+    "kind_label": "Author-released checkpoint",
+    "artifact_page_url": "https://github.com/Perkins729/OmniXtreme/tree/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy",
+    "original_filename": "base_policy_trt.onnx + residual_policy.onnx + fk_trt.onnx",
+    "download_url": "https://raw.githubusercontent.com/Perkins729/OmniXtreme/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy/base_policy_trt.onnx",
+    "sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2",
+    "verification": "All three original ONNX files match pinned Git blob SHA1 and local SHA256; no conversion.",
+    "artifacts": [
+      {
+        "path": "policy/base_policy_trt.onnx",
+        "bytes": 101872427,
+        "git_blob_sha1": "f0aaf542932def091ffefd15947b3cdf5e448452",
+        "sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2",
+        "url": "https://raw.githubusercontent.com/Perkins729/OmniXtreme/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy/base_policy_trt.onnx"
+      },
+      {
+        "path": "policy/fk_trt.onnx",
+        "bytes": 40618,
+        "git_blob_sha1": "df1aaa38ee38ff0694537cc2ccfc7ea37adf69db",
+        "sha256": "16c1c04d431a15964db422180039c2d0fb688eeb246d0bdbc041de9a25d756ef",
+        "url": "https://raw.githubusercontent.com/Perkins729/OmniXtreme/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy/fk_trt.onnx"
+      },
+      {
+        "path": "policy/residual_policy.onnx",
+        "bytes": 3555934,
+        "git_blob_sha1": "48e34f42c7c0685be3a2bcfe8f5a750e4175e842",
+        "sha256": "6174205a430b84ec51d3f15e014907504a9ad0c38575535a509bc771ebbc1d85",
+        "url": "https://raw.githubusercontent.com/Perkins729/OmniXtreme/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy/residual_policy.onnx"
+      }
+    ]
+  },
+  "deployment": {
+    "history": "15x90 oldest-first zero initial history; base history uses previous base action; residual input uses previous combined action.",
+    "reference": "Next control frame, t+0.02 s; final canonical frame clamped. Reference frame zero initializes heading registration.",
+    "architecture": "Original flow base + residual (gain1, no tanh) + original FK; float32 CPU ONNX, named joint mapping and native torque-speed envelope target clipping.",
+    "randomness": "Per-clip Core seed initializes a dedicated CPU torch.Generator. Standard-normal initial_noise retained. Random warm-up and unused zero-amplitude sensor random draws are not replayed. Conditional native parity uses identical noise. No deterministic zero-noise replacement.",
+    "sensor_noise": "Nominal protocol requires no sensor noise; author config base_ang_vel noise0.1 is disabled explicitly.",
+    "physics": "Author pd_control_friction, simulator XML, initial height0.79 and action delay belong to the author simulator, not the learned policy. They do not override common Core initialization, dynamics, friction, motor limits or failure/scoring rules.",
+    "target_filter": "Native target envelope is computed at the control tick and retained; normal PD torque computation at physics ticks remains in Core."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "source": {
+    "repository": "https://github.com/Perkins729/OmniXtreme",
+    "commit": "6f2716d1b1d1132d513d86beb2193f5b18f11fcd",
+    "files": {
+      "deploy_mujoco.py": "e4877d2ec664eefe0eba6d6446e6e0c82a4913056cbe483412cc5b7123494d26",
+      "residual_policy.py": "e55d5d91e4090f16d094d6a7a53d1ddfabf6c1717e7f09c1b46f42a6beb67b99",
+      "configs/config.yaml": "d22c874143a3c65d71bd21c93e1f1bbd52afe9bce1b88e670e8efdb70ef6176b",
+      "isaac_utils/rotations.py": "706368d107d652d3598eaa2449261bdb82ab2d27d1079553265ea1047fa1dc45",
+      "isaac_utils/maths.py": "ffd9251f5e687cc1be25b0045c61d7a04d75ed83ce8490e22050512c5ad68ac7",
+      "isaac_utils/torch_utils.py": "865973c3acc6d2d76dc8b630d081e0f2025d009bb87bac868bdf68340b60960f"
+    }
+  },
+  "cases": 160,
+  "resets": 4,
+  "endpoint_cases": 24,
+  "envelope_clipped_cases": 129,
+  "shuffled_joint_order": true,
+  "max_abs_errors": {
+    "real_obs": 0.0,
+    "command_obs": 0.0,
+    "history": 0.0,
+    "residual_obs": 0.0,
+    "base_action": 0.0,
+    "combined_action": 0.0,
+    "motor_target": 0.0
+  },
+  "tolerance": 2e-05,
+  "seeded_sampling": {
+    "same_seed_reset_exact": true,
+    "different_seed_changes_output": true,
+    "matches_torch_standard_normal": true,
+    "steps_per_sequence": 4
+  },
+  "noise": "Same author-generated initial_noise supplied to both networks; sensor noise zero for nominal protocol.",
+  "physics": "Author per-physics-step friction and simulator settings are excluded; Core owns common physics."
+}

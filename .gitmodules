@@ -1,0 +1,3 @@
+[submodule "motion-challenge"]
+	path = motion-challenge
+	url = https://github.com/MotionChallenge-Project/MotionChallenge-Core.git
