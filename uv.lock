@@ -110,7 +110,7 @@ wheels = [
 ]
 
 [[package]]
-name = "motion-challenge"
+name = "motionchallenge-core"
 version = "0.0.2.dev0"
 source = { editable = "MotionChallenge-Core" }
 dependencies = [
@@ -131,18 +131,18 @@ requires-dist = [
 ]
 
 [[package]]
-name = "motion-challenge-omnixtreme"
+name = "motionchallenge-omnixtreme"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "motion-challenge" },
+    { name = "motionchallenge-core" },
     { name = "torch", version = "2.14.1", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'linux'" },
     { name = "torch", version = "2.14.1+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "sys_platform == 'linux'" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "motion-challenge", editable = "MotionChallenge-Core" },
+    { name = "motionchallenge-core", editable = "MotionChallenge-Core" },
     { name = "torch", marker = "sys_platform != 'linux'", specifier = "==2.14.1" },
     { name = "torch", marker = "sys_platform == 'linux'", specifier = "==2.14.1", index = "https://download.pytorch.org/whl/cpu" },
 ]

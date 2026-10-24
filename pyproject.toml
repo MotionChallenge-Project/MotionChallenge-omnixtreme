@@ -1,11 +1,11 @@
 [project]
-name = "motion-challenge-omnixtreme"
+name = "MotionChallenge-omnixtreme"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["motion-challenge", "torch==2.14.1"]
+dependencies = ["MotionChallenge-Core", "torch==2.14.1"]
 
 [tool.uv.sources]
-motion-challenge = {path = "MotionChallenge-Core", editable = true}
+motionchallenge-core = {path = "MotionChallenge-Core", editable = true}
 torch = [{index = "pytorch-cpu", marker = "sys_platform == 'linux'"}]
 
 [[tool.uv.index]]
