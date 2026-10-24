@@ -1,0 +1,23 @@
+{
+  "model": "omnixtreme",
+  "status": "passed",
+  "cases": 160,
+  "resets": 4,
+  "tolerance_abs": 2e-05,
+  "checkpoint_sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2",
+  "network_calls": 480,
+  "max_abs_error": {
+    "observation": 0.0,
+    "network_output": 0.0,
+    "motor_command": 0.0
+  },
+  "checks": [
+    "160 matched state sequences / 4 resets",
+    "large actual translation perturbations",
+    "reference windows preserved including endpoints",
+    "all captured ONNX inputs and outputs",
+    "all PD command fields",
+    "forbidden-field counterfactual before transport"
+  ],
+  "limits": "Finite numerical regression plus source audit; not a proof against malicious code or implicit neural odometry."
+}

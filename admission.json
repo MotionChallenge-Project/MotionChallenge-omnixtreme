@@ -3,7 +3,7 @@
   "model": "omnixtreme",
   "display_name": "OmniXtreme",
   "state_access": "ideal-proprioceptive-no-position-v1",
-  "status": "pending_verification",
+  "status": "inference_verified",
   "checkpoint_sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2",
   "auxiliary_artifacts": {
     "fk": "16c1c04d431a15964db422180039c2d0fb688eeb246d0bdbc041de9a25d756ef",
@@ -61,8 +61,15 @@
   "actual_position_integration": "No explicit integration or odometry in the inspected deployed adapter source; blocked paths are listed separately.",
   "special_handling": "FK of allowed state at fixed synthetic origin (0,0,0); never actual measured origin.",
   "new_evaluation": {
-    "status": "not_started",
+    "status": "queued",
     "inherited_scores": false
   },
-  "repository": "https://github.com/MotionChallenge-Project/MotionChallenge-omnixtreme"
+  "repository": "https://github.com/MotionChallenge-Project/MotionChallenge-omnixtreme",
+  "dependency_test": {
+    "path": "validation/observation-access.json",
+    "sha256": "03794f522b1b79b3c6dac91c3e414c0d47b538959a66fef18c8992c70a305a0f",
+    "code": "validate_observations.py",
+    "cases": 160,
+    "resets": 4
+  }
 }

@@ -29,5 +29,13 @@
       "sha256": "6174205a430b84ec51d3f15e014907504a9ad0c38575535a509bc771ebbc1d85"
     }
   },
-  "official": false
+  "official": false,
+  "default_track": "ideal-proprioception",
+  "observation_tracks": {
+    "ideal-proprioception": {
+      "entrypoint": "restricted:create",
+      "admission_record": "admission.json",
+      "admission_sha256": "67b8eb6ae42923a6698187ded2ee390f94c6baad7e896f03e92761a1bb3ef59b"
+    }
+  }
 }

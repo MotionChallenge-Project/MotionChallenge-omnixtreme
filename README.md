@@ -23,4 +23,6 @@ The root `MotionChallenge-Core` submodule owns data, physics, scoring and verifi
 
 ## Observation track
 
-The restricted observation track is not yet admitted for this checkpoint. [Admission and special handling](admission.json) · [Rules](MotionChallenge-Core/docs/OBSERVATIONS.md).
+Default: **ideal proprioception, no global position feedback**. [Admission and special handling](admission.json) · [Rules](MotionChallenge-Core/docs/OBSERVATIONS.md).
+
+For the original privileged-state track: `uv run evaluate.py --track privileged`.
