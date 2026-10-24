@@ -86,7 +86,7 @@ def main():
         captured.update({k: v.copy() for k, v in obs.items()})
         return obs
     policy.observations = capture
-    world = World(root/'motion-challenge/robots/g1-29dof-cpu-v0.json')
+    world = World(root/'MotionChallenge-Core/robots/g1-29dof-cpu-v0.json')
     assert list(world.joint_names) == policy.names
     native_env = native['G1']()
     np.testing.assert_array_equal(policy.kp, native_env.p_gains)

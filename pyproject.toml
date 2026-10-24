@@ -5,7 +5,7 @@ requires-python = ">=3.12,<3.13"
 dependencies = ["motion-challenge", "torch==2.14.1"]
 
 [tool.uv.sources]
-motion-challenge = {path = "motion-challenge", editable = true}
+motion-challenge = {path = "MotionChallenge-Core", editable = true}
 torch = [{index = "pytorch-cpu", marker = "sys_platform == 'linux'"}]
 
 [[tool.uv.index]]

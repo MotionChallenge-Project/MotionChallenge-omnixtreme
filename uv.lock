@@ -112,7 +112,7 @@ wheels = [
 [[package]]
 name = "motion-challenge"
 version = "0.0.2.dev0"
-source = { editable = "motion-challenge" }
+source = { editable = "MotionChallenge-Core" }
 dependencies = [
     { name = "mujoco" },
     { name = "numpy" },
@@ -142,7 +142,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "motion-challenge", editable = "motion-challenge" },
+    { name = "motion-challenge", editable = "MotionChallenge-Core" },
     { name = "torch", marker = "sys_platform != 'linux'", specifier = "==2.14.1" },
     { name = "torch", marker = "sys_platform == 'linux'", specifier = "==2.14.1", index = "https://download.pytorch.org/whl/cpu" },
 ]

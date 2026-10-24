@@ -17,6 +17,6 @@ author weights are downloaded and SHA256-checked. Results and traces stay outsid
 
 Use local files with `--weights BASE --artifact fk=FK --artifact residual=RESIDUAL
 --data DATA --offline`. Policy sampling uses the recorded per-clip seed.
-The root `motion-challenge` submodule owns data, physics, scoring and verification.
+The root `MotionChallenge-Core` submodule owns data, physics, scoring and verification.
 
 [Inference validation](validation/README.md) · [Native parity report](validation/native-parity.json)
