@@ -1,0 +1,68 @@
+{
+  "schema": "MotionChallenge/observation-admission-v1",
+  "model": "omnixtreme",
+  "display_name": "OmniXtreme",
+  "state_access": "ideal-proprioceptive-no-position-v1",
+  "status": "pending_verification",
+  "checkpoint_sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2",
+  "auxiliary_artifacts": {
+    "fk": "16c1c04d431a15964db422180039c2d0fb688eeb246d0bdbc041de9a25d756ef",
+    "residual": "6174205a430b84ec51d3f15e014907504a9ad0c38575535a509bc771ebbc1d85"
+  },
+  "checkpoint_origin": {
+    "author_release_url": "https://github.com/Perkins729/OmniXtreme/blob/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/README.md",
+    "author_release_label": "OmniXtreme authors",
+    "kind": "author_file",
+    "kind_label": "Author-released checkpoint",
+    "artifact_page_url": "https://github.com/Perkins729/OmniXtreme/tree/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy",
+    "original_filename": "base_policy_trt.onnx + residual_policy.onnx + fk_trt.onnx",
+    "download_url": "https://raw.githubusercontent.com/Perkins729/OmniXtreme/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy/base_policy_trt.onnx",
+    "sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2",
+    "verification": "All three original ONNX files match pinned Git blob SHA1 and local SHA256; no conversion.",
+    "artifacts": [
+      {
+        "path": "policy/base_policy_trt.onnx",
+        "bytes": 101872427,
+        "git_blob_sha1": "f0aaf542932def091ffefd15947b3cdf5e448452",
+        "sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2",
+        "url": "https://raw.githubusercontent.com/Perkins729/OmniXtreme/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy/base_policy_trt.onnx"
+      },
+      {
+        "path": "policy/fk_trt.onnx",
+        "bytes": 40618,
+        "git_blob_sha1": "df1aaa38ee38ff0694537cc2ccfc7ea37adf69db",
+        "sha256": "16c1c04d431a15964db422180039c2d0fb688eeb246d0bdbc041de9a25d756ef",
+        "url": "https://raw.githubusercontent.com/Perkins729/OmniXtreme/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy/fk_trt.onnx"
+      },
+      {
+        "path": "policy/residual_policy.onnx",
+        "bytes": 3555934,
+        "git_blob_sha1": "48e34f42c7c0685be3a2bcfe8f5a750e4175e842",
+        "sha256": "6174205a430b84ec51d3f15e014907504a9ad0c38575535a509bc771ebbc1d85",
+        "url": "https://raw.githubusercontent.com/Perkins729/OmniXtreme/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/policy/residual_policy.onnx"
+      }
+    ]
+  },
+  "author_source": "https://github.com/Perkins729/OmniXtreme",
+  "author_commit": "6f2716d1b1d1132d513d86beb2193f5b18f11fcd",
+  "base_adapter_commit": "a1e66b16e1fa8366f115181af9c6f578f18999c2",
+  "production_source_sha256": {
+    "adapter.py": "bc2c8151529e3716ff4600ef04fb57cbab649d66817dda44bf7ffb583ad56423",
+    "evaluate.py": "0ebb8c761f00dd963f2e45c85ecb94628273911bb1edfc0f2621e8fc458cb4ff",
+    "native-sources.json": "4fdfcf8f231d79686fcc26f50cc68f5e906cb0bcf0cfa6c17f32ab742ca221f6",
+    "native_rotations.py": "c2f25c9bda700f90e7f048ee34d5b21f0acd37fb3377b5903ee7ce4c5591b339",
+    "policy.json": "ac2c390c351ca3de88e637fe794cfa25281284b34a2eae748235620768396ed5",
+    "validate_inference.py": "092246cd705db6f6705cecd617bc0bf8a013061e250cb7a0d33b5fba771ebf04"
+  },
+  "prior_native_parity_sha256": {
+    "validation/native-parity.json": "8406db109ad4529c873d503e3a1d6e96bfe7c49bdfced33b64f16f7268f580a1"
+  },
+  "handling": "Released actor uses joint state, angular velocity/gravity or orientation and reference features. Retain author normalization, history/recurrent state, action processing and declared lookahead; validate numerical independence from actual translation.",
+  "actual_position_integration": "No explicit integration or odometry in the inspected deployed adapter source; blocked paths are listed separately.",
+  "special_handling": "FK of allowed state at fixed synthetic origin (0,0,0); never actual measured origin.",
+  "new_evaluation": {
+    "status": "not_started",
+    "inherited_scores": false
+  },
+  "repository": "https://github.com/MotionChallenge-Project/MotionChallenge-omnixtreme"
+}
