@@ -7,7 +7,7 @@
   "project_url": "https://extreme-humanoid.github.io/",
   "source_commit": "6f2716d1b1d1132d513d86beb2193f5b18f11fcd",
   "checkpoint_sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2",
-  "author_inference_review": "Passed 160 states, 4 resets, 24 endpoint clamps and shuffled joint order; all observed inputs, outputs and motor targets exactly equal to original inference under the same sampled initial_noise and nominal sensor state. 126 cases exercised native target limits.",
+  "author_inference_review": "Numerical comparison against pinned author inference: validation/native-parity.json",
   "inference_validation": "validation/native-parity.json",
   "checkpoint_origin": {
     "author_release_url": "https://github.com/Perkins729/OmniXtreme/blob/6f2716d1b1d1132d513d86beb2193f5b18f11fcd/README.md",

@@ -60,10 +60,6 @@
   "handling": "Released actor uses joint state, angular velocity/gravity or orientation and reference features. Retain author normalization, history/recurrent state, action processing and declared lookahead; validate numerical independence from actual translation.",
   "actual_position_integration": "No explicit integration or odometry in the inspected deployed adapter source; blocked paths are listed separately.",
   "special_handling": "FK of allowed state at fixed synthetic origin (0,0,0); never actual measured origin.",
-  "new_evaluation": {
-    "status": "queued",
-    "inherited_scores": false
-  },
   "repository": "https://github.com/MotionChallenge-Project/MotionChallenge-omnixtreme",
   "dependency_test": {
     "path": "validation/observation-access.json",

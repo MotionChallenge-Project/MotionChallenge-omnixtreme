@@ -12,7 +12,7 @@ uv run evaluate.py
 ```
 
 Produces success, completion and six MPBPE values in a verified `result.json`.
-MuJoCo 3.17 CPU batch; `--jobs 8` sets parallelism. Missing data and the three
+MuJoCo 3.17 CPU batch; `--jobs` sets parallelism. Missing data and the three
 author weights are downloaded and SHA256-checked. Results and traces stay outside Git.
 
 Use local files with `--weights BASE --artifact fk=FK --artifact residual=RESIDUAL
