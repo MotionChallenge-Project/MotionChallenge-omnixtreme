@@ -1,6 +1,6 @@
 """OmniXtreme's released flow policy, residual policy and FK network on CPU."""
+from motion_challenge.adapters.onnx import cpu_session
 import numpy as np
-import onnxruntime as ort
 from scipy.spatial.transform import Rotation as R
 import torch
 
@@ -22,15 +22,13 @@ class OmniXtreme(ONNXController):
         self.kd_t = torch.tensor(self.kd, dtype=torch.float32)
         self.envelope = {key: torch.tensor(value, dtype=torch.float32)
                          for key, value in self.cfg['envelope'].items()}
-        options = ort.SessionOptions()
-        options.intra_op_num_threads = options.inter_op_num_threads = 1
         self.extra = {}
         for name in ('fk', 'residual'):
             declaration = runtime['artifacts'][name]
             path = root/declaration['path']
             if sha256_file(path) != declaration['sha256']:
                 raise ValueError(f'{name} checkpoint checksum mismatch')
-            self.extra[name] = ort.InferenceSession(str(path), options, providers=['CPUExecutionProvider'])
+            self.extra[name] = cpu_session(path, declaration['sha256'])
 
     def reset(self, state, reference, seed):
         super().reset(state, reference, seed)
