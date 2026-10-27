@@ -1,0 +1,107 @@
+{
+  "status": "passed",
+  "source": {
+    "repository": "https://github.com/Perkins729/OmniXtreme",
+    "commit": "6f2716d1b1d1132d513d86beb2193f5b18f11fcd",
+    "files": {
+      "deploy_mujoco.py": "e4877d2ec664eefe0eba6d6446e6e0c82a4913056cbe483412cc5b7123494d26",
+      "residual_policy.py": "e55d5d91e4090f16d094d6a7a53d1ddfabf6c1717e7f09c1b46f42a6beb67b99",
+      "configs/config.yaml": "d22c874143a3c65d71bd21c93e1f1bbd52afe9bce1b88e670e8efdb70ef6176b",
+      "isaac_utils/rotations.py": "706368d107d652d3598eaa2449261bdb82ab2d27d1079553265ea1047fa1dc45",
+      "isaac_utils/maths.py": "ffd9251f5e687cc1be25b0045c61d7a04d75ed83ce8490e22050512c5ad68ac7",
+      "isaac_utils/torch_utils.py": "865973c3acc6d2d76dc8b630d081e0f2025d009bb87bac868bdf68340b60960f"
+    }
+  },
+  "cases": 160,
+  "resets": 4,
+  "endpoint_cases": 24,
+  "envelope_clipped_cases": 129,
+  "shuffled_joint_order": true,
+  "max_abs_errors": {
+    "real_obs": 0.0,
+    "command_obs": 0.0,
+    "history": 0.0,
+    "residual_obs": 0.0,
+    "base_action": 0.0,
+    "combined_action": 0.0,
+    "motor_target": 0.0
+  },
+  "tolerance": 2e-05,
+  "seeded_sampling": {
+    "same_seed_reset_exact": true,
+    "different_seed_changes_output": true,
+    "matches_torch_standard_normal": true,
+    "steps_per_sequence": 4
+  },
+  "noise": "Same author-generated initial_noise supplied to both networks; sensor noise zero for nominal protocol.",
+  "physics": "Author per-physics-step friction and simulator settings are excluded; Core owns common physics.",
+  "review": {
+    "schema": "MotionChallenge/inference-review-v1",
+    "reviewed_at": "2026-10-27T07:41:40.030291+00:00",
+    "core_commit": "4bf520618f25f72d371117326edb01f4645eaa3f",
+    "base_adapter_commit": "a8da996a5b1183474cebffc386e609e20145f80f",
+    "control_hz": 50.0,
+    "reference_offsets_s": [
+      0.0,
+      0.02
+    ],
+    "checkpoint_sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2",
+    "auxiliary_sha256": {
+      "fk": "16c1c04d431a15964db422180039c2d0fb688eeb246d0bdbc041de9a25d756ef",
+      "residual": "6174205a430b84ec51d3f15e014907504a9ad0c38575535a509bc771ebbc1d85"
+    },
+    "deployment_route": "Original flow-base, residual and FK ONNX graphs, fixed per-slot CPU random generator, author history and speed-dependent torque-envelope mapping.",
+    "production_files_sha256": {
+      "adapter.py": "f0b660ac158a2356b7dc79e122b632a7710d823c1a4e763d535ced067efa4566",
+      "evaluate.py": "0ebb8c761f00dd963f2e45c85ecb94628273911bb1edfc0f2621e8fc458cb4ff",
+      "native_rotations.py": "c2f25c9bda700f90e7f048ee34d5b21f0acd37fb3377b5903ee7ce4c5591b339",
+      "parallel.py": "24f5d3b68572d209c8570f8e346ad63b158aac17a86950aebf49c397d2d234fc",
+      "restricted.py": "8f8fdcc4dc41813cf5d8f8c55e4b219310145f74a540457b52c41843a49bd831"
+    },
+    "inference_config_sha256": "ac2c390c351ca3de88e637fe794cfa25281284b34a2eae748235620768396ed5",
+    "comparison_script_sha256": "092246cd705db6f6705cecd617bc0bf8a013061e250cb7a0d33b5fba771ebf04",
+    "default_batch": {
+      "status": "passed",
+      "cases": 103,
+      "reset_slots": 20,
+      "max_command_abs_error": 0.0,
+      "exact": true,
+      "tolerance": 1e-05,
+      "wall_s": 4.670395139604807,
+      "checks": [
+        "default PolicyBatch array transport",
+        "1/3/8 active slots",
+        "reordered slots",
+        "independent partial resets and seeded RNG",
+        "reference endpoint clamping",
+        "all five motor command fields"
+      ],
+      "checkpoint_sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2"
+    },
+    "restricted_access": {
+      "status": "passed",
+      "cases": 160,
+      "resets": 4,
+      "tolerance_abs": 2e-05,
+      "checkpoint_sha256": "b050772c0b49c813f457cdf21bb3e4f23a027e2e22c5279ab23423ea264007e2",
+      "network_calls": 480,
+      "max_abs_error": {
+        "observation": 0.0,
+        "network_output": 0.0,
+        "motor_command": 0.0
+      },
+      "checks": [
+        "160 matched state sequences / 4 resets",
+        "large actual translation perturbations",
+        "reference windows preserved including endpoints",
+        "all captured ONNX inputs and outputs",
+        "all PD command fields",
+        "forbidden-field counterfactual before transport"
+      ],
+      "limits": "Finite numerical regression plus source audit; not a proof against malicious code or implicit neural odometry."
+    },
+    "default_batch_script_url": "https://github.com/MotionChallenge-Project/motionchallenge/blob/2ef7ecab3b3a06bb4a53fa137de2d7f9365d6b50/tools/check_adapter_inference.py",
+    "default_batch_script_sha256": "2cb7984c27f4bbca2355ed2e05b5a48ca2e5ceb865850e1b6f2445f06b594241",
+    "scope": "Matched-input inference, observation boundary, deployment configuration and default batch path. No benchmark rollouts or scores were changed."
+  }
+}
